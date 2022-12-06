@@ -7,6 +7,7 @@ import inspect
 import unittest
 HBNBCommand = console.HBNBCommand
 
+
 class TestConsoleDocs(unittest.TestCase):
     """ testing documentation of the console """
     def test_pep8_conformance_console(self):
@@ -14,7 +15,7 @@ class TestConsoleDocs(unittest.TestCase):
         pep8_ = pep8.StyleGuide(quiet=True)
         result = pep8_.check_files(['console.py'])
         self.assertEqual(result.totl_errors, 0,
-        "Found code style errors (and warnings).")
+                        "Found code style errors (and warnings).")
 
     def test_pep8_conformance_test_console(self):
         pep8_ = pep8.StyleGuide(quiet=True)
