@@ -52,10 +52,10 @@ class FileStorage:
         except FileNotFoundError:
             pass
 
-            def delete(self, obj=None):
-                """ delelte objects"""
-                copy_dic = FileStorage.__objects.copy()
+    def delete(self, obj=None):
+        """ delelte objects"""
+        copy_dic = FileStorage.__objects.copy()
 
-                for key, value in copy_dic.items():
-                    if value == obj:
-                        del FileStorage.__objects[key]
+        for key, value in copy_dic.items():
+            if value == obj:
+                del FileStorage.__objects[key]
