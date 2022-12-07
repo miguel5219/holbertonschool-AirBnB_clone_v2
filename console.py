@@ -126,7 +126,7 @@ class HBNBCommand(cmd.Cmd):
         elif class_name not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        _new_instance = HBNBCommand.classes[class_name]()
+        new_instance = HBNBCommand.classes[class_name]()
 
         if param != "":
             attributes = param.split(" ")
@@ -135,10 +135,10 @@ class HBNBCommand(cmd.Cmd):
                 key = eleme.partition("=")[0]
                 value = eleme.partition("=")[2]
                 value = value.replace("_", " ")
-                setattr(_new_instance, key, eval(value))
+                setattr(new_instance, key, eval(value))
 
-        print(_new_instance.id)
-        _new_instance.save()
+        print(new_instance.id)
+        new_instance.save()
 
     def help_create(self):
         """ Help information for the create method """
