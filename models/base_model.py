@@ -19,11 +19,11 @@ class BaseModel:
         """Instatntiates a new model"""
 
         self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        self.created_at = datetime.utcnow()
+        self.updated_at = datetime.utcnow()
 
         if kwargs:
-            if kwargs.get('updated_at'):
+            if kwargs.get('update_at'):
                 kwargs['updated_at'] = datetime.strptime(
                     kwargs['updated_at'], '%Y-%m-%dT%H:%M:%S.%f')
             if kwargs.get('created_at'):
