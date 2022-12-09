@@ -12,6 +12,7 @@ from models.state import State
 from models.user import User
 from sqlalchemy.orm import sessionmaker, scoped_session
 
+
 class DBStorage:
     """ class DBStorage """
 
