@@ -29,17 +29,20 @@ def C_route(text):
 @app.route("/python/", defaults={'text': 'is cool'})
 @app.route("/python/<text>", strict_slashes=False)
 def python_route(text):
+    """ . """
     newText = text.replace('_', ' ')
     return 'Python {}'.format(escape(newText))
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def number_Route(n):
+    """ . """
     return '{} is a number'. format(n)
 
 
 @app.router("/number_template/<int:n>", strict_slashes=False)
 def numberTemplateRouter(n):
+    """ . """
     return render_template('5-number.html', n=n)
 
 
