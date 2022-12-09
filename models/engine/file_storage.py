@@ -54,8 +54,6 @@ class FileStorage:
 
     def delete(self, obj=None):
         """ delelte objects"""
-        copy_dic = FileStorage.__objects.copy()
-
-        for key, value in copy_dic.items():
-            if value == obj:
-                del FileStorage.__objects[key]
+        if obj:
+            key = "{}.{}".format(type(obj).__name__, obj.id)
+            del FileStorage.__objects[key]
