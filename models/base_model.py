@@ -66,5 +66,5 @@ class BaseModel:
     def delete(self):
         """ delete the current instance """
         from models import storage
-        for key in storage.__objects.keys():
-            storage.delete(storage.__objects[key])
+        for keys in storage.__objects.keys():
+            storage.delete(keys)
