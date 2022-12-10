@@ -14,9 +14,7 @@
             <ul>
                 {% for cities in cities_ob | sort(attribute='name') %}
                 {% if cities.state_id == states.id %}
-                <li>
-                    {{ cities.id }}: <b>{{ cities.name }}</b>
-                </li>
+                <li>{{ cities.id }}: <b>{{ cities.name }}</b></li>
                 {% endif %}
                 {% endfor %}
             </ul>
@@ -24,4 +22,5 @@
         {% endfor %}
     </ul>
 </body>
+
 </HTML>
