@@ -13,7 +13,7 @@ from sqlalchemy.orm import relationship
 app = Flask(__name__)
 
 
-@app.route('cities_by_states', strict_slashes=False)
+@app.route('/cities_by_states', strict_slashes=False)
 def cities_by_state():
     from models.state import State
     if getenv('HBNB_TYPE_STORAGE') == 'db':
