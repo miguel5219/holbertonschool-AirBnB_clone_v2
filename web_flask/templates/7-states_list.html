@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <tittle>HBNB</tittle>
+</head>
+<body>
+    <h1>States</h1>
+    <ul>
+        {% for inst in obj | sort(attribute='name') %}
+        <li>{{ inst.id }}: <B>{{ inst.name }}</B></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
