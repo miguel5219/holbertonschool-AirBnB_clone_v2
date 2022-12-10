@@ -59,3 +59,7 @@ class FileStorage:
         for key, val in copy_dic.items():
             if val == obj:
                 del FileStorage.__objects[key]
+
+    def close(self):
+        """ deserializing the JSON file to objects """
+        self.reload()
