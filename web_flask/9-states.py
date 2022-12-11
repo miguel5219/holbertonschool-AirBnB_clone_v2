@@ -22,7 +22,7 @@ def states_route_id(id):
     states_ob = [s for s in storage.all(State).values()]
     states_ids = [s.id for s in storage.all(State).values()]
     state_name = [s.name for s in storage.all(State).values()
-                    if s.id == id]
+                  if s.id == id]
     _s_name = ''
     if len(state_name) >= 1:
         for i in state_name:
@@ -30,9 +30,9 @@ def states_route_id(id):
     else:
         _s_name = ''
         return render_template("9-states.html",
-                                id=id, cities_ob=cities_ob,
-                                states_ob=states_ob, _s_name=_s_name,
-                                states_ids=states_ids)
+                               id=id, cities_ob=cities_ob,
+                               states_ob=states_ob, _s_name=_s_name,
+                               states_ids=states_ids)
 
 
 @app.teardown_appcontext
