@@ -16,23 +16,23 @@ def states_route():
     return render_template("9-states.html", states_ob=states_ob)
 
 
+@app.route('/states', strict_slashes=False)
+def states_route():
+    """ show a HTML page """
+    _states = [state for state in storage.all(State).values()]
+    return render_template(
+        '9-states.html', _states=_states)
+
+
 @app.route('/states/<id>', strict_slashes=False)
 def states_route_id(id):
-    cities_ob = [c for c in list(storage.all(City).values())]
     states_ob = [s for s in storage.all(State).values()]
     states_ids = [s.id for s in storage.all(State).values()]
-    state_name = [s.name for s in storage.all(State).values()
-                  if s.id == id]
-    _s_name = ''
-    if len(state_name) >= 1:
-        for i in state_name:
-            _s_name += i
-    else:
-        _s_name = ''
-        return render_template("9-states.html",
-                               id=id, cities_ob=cities_ob,
-                               states_ob=states_ob, _s_name=_s_name,
-                               states_ids=states_ids)
+    cities_ob = [c for c in list(storage.all(City).values())]
+    return render_template("9-states.html",
+                               cities_ob=cities_ob,
+                               states_ob=states_ob,
+                               id=id, states_ids=states_ids)
 
 
 @app.teardown_appcontext
